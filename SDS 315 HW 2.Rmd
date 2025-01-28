@@ -96,7 +96,6 @@ ggplot(profs, aes(x = beauty, y = eval)) +
 ##Load Data
 
 ```{r}
-# Load the dataset
 setwd("/Users/suryabhsingh/Desktop/SDS 315")
 bikeshare <- read.csv("bikeshare.csv")
 
@@ -183,7 +182,6 @@ ggplot(rentals_9am, aes(x = weathersit, y = avg_rentals, fill = weathersit)) +
 ##Load Data
 
 ```{r}
-# Load the dataset
 setwd("/Users/suryabhsingh/Desktop/SDS 315")
 capmetro_UT <- read.csv("capmetro_UT.csv")
 
@@ -195,7 +193,6 @@ capmetro_UT <- capmetro_UT %>%
     weekend = factor(weekend, labels = c("Weekday", "Weekend"))
   )
 
-# Ensure timestamp is in datetime format
 capmetro_UT$timestamp <- as.POSIXct(capmetro_UT$timestamp, format="%Y-%m-%d %H:%M:%S")
 ```
 
@@ -245,7 +242,6 @@ ggplot(capmetro_UT, aes(x = temperature, y = boarding, color = weekend)) +
 ##Load Data
 
 ```{r}
-# Load the dataset
 setwd("/Users/suryabhsingh/Desktop/SDS 315")
 billboard <- read.csv("billboard.csv")
 
@@ -300,7 +296,7 @@ ggplot(musical_diversity, aes(x = year, y = unique_songs)) +
 ```{r}
 # Load required libraries
 library(tidyverse)
-library(forcats)  # For reordering factors
+library(forcats) 
 
 # Identify songs that appeared for at least 10 weeks
 ten_week_hits <- billboard %>%
